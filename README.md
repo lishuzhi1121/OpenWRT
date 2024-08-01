@@ -108,7 +108,7 @@ make menuconfig
 
 根据自己的设备型号，在 [OpenWRT支持的硬件设备列表](https://openwrt.org/toh/start) 页面中搜索，如下图：
 
-![openwrt-wndr4300](assets/17224793666578.jpg)
+![openwrt-wndr4300.png](assets/17224793666578.png)
 
 点击进入自己的设备主页，找到自己设备的CPU类型与Flash类型，如下图：
 
