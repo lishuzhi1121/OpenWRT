@@ -70,7 +70,7 @@ src-git passwall https://github.com/xiaorouji/openwrt-passwall
 
 编辑完成后文件内容如下图：
 
-![feeds.conf.default.png](https://github.com/lishuzhi1121/OpenWRT/blob/main/assets/17224105216993.jpg?raw=true)
+![feeds.conf.default.png](assets/17224105216993.jpg)
 
 ### 4. 更新feeds源
 
@@ -100,7 +100,7 @@ make menuconfig
 
 命令执行成功之后如下图：
 
-![make-menuconfig.png](https://github.com/lishuzhi1121/OpenWRT/blob/main/assets/17224793666524.jpg?raw=true)
+![make-menuconfig.png](assets/17224793666524.jpg)
 
 详细编译配置说明如下：
 
@@ -108,17 +108,17 @@ make menuconfig
 
 根据自己的设备型号，在 [OpenWRT支持的硬件设备列表](https://openwrt.org/toh/start) 页面中搜索，如下图：
 
-![openwrt-wndr4300](https://github.com/lishuzhi1121/OpenWRT/blob/main/assets/17224793666578.jpg?raw=true)
+![openwrt-wndr4300](assets/17224793666578.jpg)
 
 点击进入自己的设备主页，找到自己设备的CPU类型与Flash类型，如下图：
 
-![openwrt-wndr4300-device-page](https://github.com/lishuzhi1121/OpenWRT/blob/main/assets/17224793666625.jpg?raw=true)
+![openwrt-wndr4300-device-page](assets/17224793666625.jpg)
 
 网件WNDR4300路由器的CPU是Atheros AR9344类型（统称ar系列的），Flash是NAND类型的。
 
 > 需要注意的是，OpenWRT新版本(21.02.x及之后的版本)中已经将ar71xx系列合并到ath79系列中了，详情见：[OpenWrt 21.02.0 - 首个稳定版 - 2021 年 9 月 4 日](https://openwrt.org/zh/releases/21.02/notes-21.02.0#%E4%B8%8D%E5%86%8D%E6%94%AF%E6%8C%81%E7%9A%84%E8%AE%BE%E5%A4%87)
 
-![openwrt-no-support.jpg](https://github.com/lishuzhi1121/OpenWRT/blob/main/assets/17224184153973.jpg?raw=true)
+![openwrt-no-support.jpg](assets/17224184153973.jpg)
 
 所以这里选择 **Atheros ATH79** 。
 
@@ -134,7 +134,7 @@ make menuconfig
 
 这里是自定义OpenWRT系统的基础软件包，这里一般不需要做改动，我们这里只修改一项，去掉 `dnsmasq` ，选上 `dnsmasq-full` ，因为 dnsmasq-full 中包含了所有 dnsmasq 的功能，所以二者选其一即可。
 
-![openwrt-base-system-dnsmasq.jpg](https://github.com/lishuzhi1121/OpenWRT/blob/main/assets/17224214228374.jpg?raw=true)
+![openwrt-base-system-dnsmasq.jpg](assets/17224214228374.jpg)
 
 #### 6.5 LuCI 操作界面
 
@@ -142,16 +142,16 @@ LuCI 是OpenWRT系统官方的操作界面，我们想要自定义的软件大�
 
 中文语言设置是在 LuCI -> Modules -> Translations 里，如下图：
 
-![openwrt-luci-chinese.jpg](https://github.com/lishuzhi1121/OpenWRT/blob/main/assets/17224220967717.jpg?raw=true)
+![openwrt-luci-chinese.jpg](assets/17224220967717.jpg)
 
 在 LuCI -> Modules 里，把 luci-mod-dashboard 也选中，操作界面中文更完善一些：
 
-![openwrt-luci-dashboard.jpg](https://github.com/lishuzhi1121/OpenWRT/blob/main/assets/17224225116107.jpg?raw=true)
+![openwrt-luci-dashboard.jpg](assets/17224225116107.jpg)
 
 
 科学上网软件包是在 LuCI -> Applications 里，选上 `luci-app-ssr-plus` ，同时要把 `V2ray-core` 给选上，如下图：
 
-![openwrt-luci-applications-ssr-plus.jpg](https://github.com/lishuzhi1121/OpenWRT/blob/main/assets/17224793667004.jpg?raw=true)
+![openwrt-luci-applications-ssr-plus.jpg](assets/17224793667004.jpg)
  
 
 其他的就按需选择了，配置好之后选择Save保持配置文件。
@@ -170,5 +170,5 @@ make -j1 V=s
 
 如果一切顺利的话，编译完成后，编译结果会在 `bin` 目录下，固件包是 .img 结尾的文件，升级包为 .bin 结尾的文件，还有一些编译好的软件 .ipk 文件在 packages 目录里，根据需要去使用即可。
 
-![openwrt-build-result.jpg](https://github.com/lishuzhi1121/OpenWRT/blob/main/assets/17224230448934.jpg?raw=true)
+![openwrt-build-result.jpg](assets/17224230448934.jpg)
 34.jpg)
